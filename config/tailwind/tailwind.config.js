@@ -1,8 +1,9 @@
 module.exports = {
     theme: {
       extend: {
+        // Precisa corrigir o caminho para a imagem de fundo
         backgroundImage: {
-          'bg-principal-image': "url('assets/images/image-principal-bg.jpg')",
+          
         }
       }
     }
