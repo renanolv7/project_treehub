@@ -3,10 +3,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "treehub";
+    include('../includes/conexao_banco.php');
 
     $connection = new mysqli($servername, $username, $password, $dbname);
 

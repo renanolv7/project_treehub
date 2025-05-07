@@ -1,8 +1,6 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "treehub";
+<?php 
+
+include('../includes/conexao_banco.php');
 
 $connection = new mysqli($servername, $username, $password, $dbname);
 
@@ -11,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST['senha'];
     $tipo_acesso = $_POST['opcao'];
 
-    $sql = "INSERT INTO usuarios (email, senha, tipo_acesso) values ('$email', SHA('$senha'), '$tipo_acesso',);";
+    $sql = "INSERT INTO usuarios (email, senha, tipo_acesso) values ('$email', SHA('$senha'), '$tipo_acesso');";
 
     header("Location: ../login.php");
 
