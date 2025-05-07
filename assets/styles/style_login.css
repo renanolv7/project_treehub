@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #2f4f1c; /* Gray-800 */
-    --secondary-color: #fffefe; /* Gray-300 */
-    --text-color: #ffffff; /* White */
+    --primary-color: #2f4f1c;
+    --secondary-color: #fffefe; 
+    --text-color: #ffffff; 
 }
 
 * {
@@ -15,7 +15,7 @@ html, body {
 }
 
 body {
-    background-image: url('../images/image-principal-bg.jpg');
+    background-image: url('/assets/images/image-principal-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
