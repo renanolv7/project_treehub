@@ -1,0 +1,9 @@
+
+# Arquivos que não vão para o GIT
+
+# Ignorar arquivos de configuração do banco de dados
+/config/database/database.php
+
+# Ignorar arquivos de configuração das minhas URL's
+/config/urls.php
+
