@@ -24,7 +24,7 @@
 
             <div class="header-box">
                 <h1 class="underline-title text-2xl font-normal text-gray-950">Começar a usar</h1>
-                <p class="text-gray-600 mt-6">Seja bem-vindo, vamos acessar sua conta</p>
+                <p class="text-gray-600 mt-6">Seja bem-vindo, vamos acessar sua conta!</p>
             </div>
 
             <div class="inputs mt-5">
@@ -53,11 +53,8 @@
                 <p class="text-sm text-gray-950">Ainda não tem uma conta? <a href="#" class="font-semibold hover:underline">Cadastrar</a></p>
             </div>
 
-
         </div>
-
     </main>
-
 </body>
 
 </html>
