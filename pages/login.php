@@ -1,3 +1,8 @@
+<?php 
+    // Use caminho relativo para incluir o config
+    require_once __DIR__ . '/../config/urls.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,7 +14,8 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../assets/styles/style_login.css">
+    <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
+    
 
 </head>
 
@@ -52,7 +58,7 @@
                 </button>
 
                 <div class="text-center mt-6 p-6 border-t border-gray-200">
-                    <p class="text-sm text-gray-950">Ainda não tem uma conta? <a href="#" class="font-semibold hover:underline">Cadastrar</a></p>
+                    <p class="text-sm text-gray-950">Ainda não tem uma conta? <a href="<?= CADASTRO ?>cadastro.php" class="font-semibold hover:underline">Cadastrar</a></p>
                 </div>
 
             </div>
