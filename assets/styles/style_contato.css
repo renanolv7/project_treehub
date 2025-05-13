@@ -1,0 +1,24 @@
+:root {
+    --primary-color: #2f4f1c;
+    --secondary-color: #fffefe; 
+    --text-color: #ffffff;
+    --background-color: #f4f4f4; /* Cor de fundo padrão */
+
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+}
+
