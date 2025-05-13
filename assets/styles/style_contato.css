@@ -2,8 +2,7 @@
     --primary-color: #2f4f1c;
     --secondary-color: #fffefe; 
     --text-color: #ffffff;
-    --background-color: #f4f4f4; /* Cor de fundo padrão */
-
+    --background-color: #f4f4f4; 
 }
 
 * {
@@ -21,4 +20,3 @@ body {
     width: 100vw;
     background-color: var(--background-color);
 }
-
