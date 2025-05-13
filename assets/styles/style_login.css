@@ -36,20 +36,3 @@ body::before {
     filter: brightness(0.4); 
     z-index: -1;
 }
-
-
-.underline-title {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 8px;
-}
-
-.underline-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 80%;
-    height: 3px;
-    background-color: var(--primary-color);
-}
