@@ -13,6 +13,7 @@ html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body { 
@@ -20,3 +21,4 @@ body {
     width: 100vw;
     background-color: var(--background-color);
 }
+
