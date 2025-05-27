@@ -1,20 +1,38 @@
 <?php
+session_start();
+
+include('../includes/conexao_banco.php');
+
+$connection = new mysqli($servername, $username, $password, $dbname);
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    $email = $connection->real_escape_string($_POST['email']);
+    $senha = $_POST['senha']; // Será usada no SHA1
 
-    include('../includes/conexao_banco.php');
+    $sql = "SELECT idusuario, nome, tipo_usuario FROM usuario WHERE email = ? AND senha = SHA(?)";
+    $stmt = $connection->prepare($sql);
+    $stmt->bind_param("ss", $email, $senha);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $connection = new mysqli($servername, $username, $password, $dbname);
-
-    $sql = "SELECT * FROM usuarios where email = '$email' and senha = SHA('$senha')";
-    $result = $connection->query($sql);
     if ($result->num_rows > 0) {
-        session_start();
+        $usuario = $result->fetch_assoc();
+        
         $_SESSION['logged_in'] = true;
-        header("Location: ../../index.php");
+        $_SESSION['usuario_id'] = $usuario['idusuario'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        $_SESSION['usuario_tipo'] = $usuario['tipo_usuario'];
+        
+        header("Location: ../index.php");
     } else {
-        header("Location: ../login.php");
+        // Login falhou
+        $_SESSION['erro_login'] = "E-mail ou senha incorretos";
+        header("Location: ../pages/login.php");
     }
+
+    $stmt->close();
+    $connection->close();
+    exit();
 }
 ?>
