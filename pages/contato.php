@@ -1,6 +1,5 @@
 <?php
-// Use caminho relativo para incluir o config
-require_once __DIR__ . '/../config/urls.php';
+    require_once __DIR__ . '/../config/urls.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,47 +10,20 @@ require_once __DIR__ . '/../config/urls.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tree Hub | Contato</title>
 
+    <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Link CSS geral -->
-    <link href="<?= LOGIN_CSS_URL ?>style_contato.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>style_contato.css" rel="stylesheet">
 
 </head>
 <body class="min-h-screen flex flex-col ">
     
-    <header class="flex h-[60px] w-auto">
-    
-        <div class="flex justify-stretch items-center w-full">
-            <div class="logo">
-                <a href="<?= INICIO ?>index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
-            </div>
-        
-            <nav class="hidden md:flex items-center space-x-6">
-                <a href="<?= INICIO ?>index.php" class="">Inicio</a>
-                <a href="#" class="">Sobre</a>
-                <a href="#" class="">Metas</a>
-                <a href="#" class="">Contato</a>
-            </nav>
-            
-            <div class="hidden md:block w-1/4 h-px bg-gray-900"></div>
-
-            <div class="hidden md:flex space-x-4">
-                <a href="#" class="social-instagram w-5"><img src="<?= ICONES ?>instagram.png" alt="" srcset=""></a>
-                <a href="#" class="social-facebook w-5"><img src="<?= ICONES ?>facebook.png" alt="" srcset=""></a>
-                <a href="#" class="social-other w-5"><img src="<?= ICONES ?>icone_partilhar.png" alt="" srcset=""></a>
-            </div>
-
-        </div>
-
-        <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3 mr-3">
-            <a href="<?= CADASTRO ?>cadastro.php"><button class="border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
-            
-            <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
-       
-        </div>
-        
-    </header>
+    <!-- Include header principal -->
+    <?php include('../includes/header_principal.php') ?>
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl flex ">
         <div class="container flex justify-between">
@@ -127,7 +99,7 @@ require_once __DIR__ . '/../config/urls.php';
     </main>
     
     <footer>
-            <?php include('C:\wamp64\www\dev\project_treehub\includes\footer.php') ?>
+        <?php include('C:\wamp64\www\dev\project_treehub\includes\footer.php') ?>
     </footer>
 </body>
 

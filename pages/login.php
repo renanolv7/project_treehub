@@ -11,10 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tree Hub | Login</title>
 
+    <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
+    <link href="../assets/styles/style_login.css" rel="stylesheet">
     
 
 </head>
