@@ -32,7 +32,7 @@
             </div>
 
             <div class="inputs mt-5">
-                <form id="form-cadastro" action="/services/cadastro_service.php" method="post">
+                <form id="form-cadastro" action="../services/cadastro_service.php" method="post">
 
                     <div class="input-group space-y-4">
                         
@@ -101,14 +101,15 @@
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-treehub-green focus:border-transparent">
                         </div>
                     </div>
+                    <button class="w-full bg-[#2f4f1c] text-white py-2 mt-5 rounded-md 
+                           border-2 border-transparent transition-all duration-300 
+                         hover:bg-white hover:text-[#2f4f1c] hover:border-[#2f4f1c]">
+                        Cadastrar
+                    </button>                    
                 </form>    
             </div>
             
-            <button class="w-full bg-[#2f4f1c] text-white py-2 mt-5 rounded-md 
-                           border-2 border-transparent transition-all duration-300 
-                         hover:bg-white hover:text-[#2f4f1c] hover:border-[#2f4f1c]">
-                Cadastrar
-            </button>
+
 
             <div class="text-center mt-6 p-6 border-t border-gray-200">
                 <p class="text-sm text-gray-950">Já tem uma conta? 
