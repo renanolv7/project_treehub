@@ -1,5 +1,4 @@
 <?php 
-    // Use caminho relativo para incluir o config
     require_once __DIR__ . '/../config/urls.php';
 ?>
 

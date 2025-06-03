@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include('../includes/conexao_banco.php');
+include('../config/database/conexao_banco.php');
 
 $connection = new mysqli($servername, $username, $password, $dbname);
 
