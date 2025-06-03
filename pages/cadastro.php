@@ -121,5 +121,6 @@
 </body>
 
 <script src="<?= JS_URL ?>Alter_user.js" defer></script>
+<script src="<?= JS_URL ?>documento_validator.js" defer></script>
 
 </html>
