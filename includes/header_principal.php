@@ -1,12 +1,12 @@
 <header class="flex h-[60px] w-auto">
     
-    <div class="flex justify-stretch items-center w-full">
+    <div class="flex justify-between items-center w-full mr-5">
         <div class="logo">
-            <a href="<?= INICIO ?>index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
+            <a href="index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
         </div>
     
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="<?= INICIO ?>index.php" class="">Inicio</a>
+            <a href="index.php" class="">Inicio</a>
             <a href="#" class="">Sobre</a>
             <a href="#" class="">Metas</a>
             <a href="#" class="">Contato</a>
