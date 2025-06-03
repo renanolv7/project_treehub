@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tree Hub | Metas</title>
 
-    <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
+    <!-- Transformar arquivos HTTP em HTTPS-->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- Tailwind CSS -->
@@ -26,7 +26,7 @@
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl flex items-center justify-center">
 
-        <div class="container flex flex-col lg:flex-row justify-between items-center space-y-2">
+        <div class="container flex flex-col lg:flex-row justify-between items-center space-y-2 mx-4 md:mx-6 lg:mx-8">
 
             <!-- Seção das barras de progresso -->
             <section class="w-full lg:w-2/5 space-y-6 md:space-y-8 lg:space-y-10">
@@ -34,8 +34,8 @@
                 <!-- Árvores Plantadas -->
                 <div class="space-y-3">
                     <h3 class="text-xl md:text-2xl font-light">ÁRVORES PLANTADAS</h3>
-                    <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#226c31] rounded-2xl flex items-center shadow-xl">
-                        <div class="absolute h-full w-[10%] bg-slate-400 rounded-l-2xl"></div>
+                    <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
+                        <div class="absolute h-full w-[10%] bg-[#2f4f1c] rounded-l-2xl"></div>
                         <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">10</span>
                         <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">10.000</span>
                     </div>
@@ -44,8 +44,8 @@
                 <!-- Valor Arrecadado -->
                 <div class="space-y-2">
                     <h3 class="text-xl md:text-2xl font-light">VALOR ARRECADADO</h3>
-                    <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#226c31] rounded-2xl flex items-center shadow-xl">
-                        <div class="absolute h-full w-[30%] bg-slate-400 rounded-l-2xl"></div>
+                    <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
+                        <div class="absolute h-full w-[30%] bg-[#2f4f1c] rounded-l-2xl"></div>
                         <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$10</span>
                         <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$30.000.000,00</span>
                     </div>
