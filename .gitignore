@@ -7,5 +7,5 @@
 # Ignorar arquivos de configuração das minhas URL's
 /config/urls.php
 
-/includes/conexao_banco.php
+/config/database/conexao_banco.php
 
