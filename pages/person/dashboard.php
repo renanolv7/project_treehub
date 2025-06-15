@@ -8,31 +8,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tree Hub | Metas</title>
+    <title>Tree Hub | Dashboard</title>
 
     <!-- Chart.js para o gráfico -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="<?= CSS_URL ?>style_meta.css" rel="stylesheet">
-
-    <!-- Google Fonts: Inter (Adicionado) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-
+    <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
 </head>
 
 <body class="min-h-screen w-auto flex flex-col">
-    
     <?php include(__DIR__ . '/../../includes/header_person.php');?>
-
-    
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8">
 
             <div class="flex justify-end my-4">
                 <button class="flex items-center space-x-2 bg-black text-white font-semibold px-5 py-2.5 rounded-md hover:bg-gray-800">
@@ -61,7 +52,7 @@
                 
             </div>
 
-            <div class="bg-gray-100 p-4 sm:p-6 rounded-lg">
+            <div class="bg-gray-100 p-2 sm:p-6 rounded-lg">
                 <h2 class="text-xl font-semibold text-gray-700 mb-6">Progresso de doações</h2>
                 <div class="h-48">
                     <canvas id="donationChart"></canvas>
@@ -69,26 +60,9 @@
             </div>
         </div>
     </main>
-
 </body>
 
 <script src="../../assets/js/charts_person.js"></script>
-<script>
-    // --- SCRIPT DO DROPDOWN DO USUÁRIO ---
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userMenu = document.getElementById('user-menu');
-
-    // Mostra/esconde o menu ao clicar no botão
-    userMenuButton.addEventListener('click', () => {
-        userMenu.classList.toggle('hidden');
-    });
-
-    // Fecha o menu se clicar fora dele
-    window.addEventListener('click', (e) => {
-        if (!userMenuButton.contains(e.target) && !userMenu.contains(e.target)) {
-            userMenu.classList.add('hidden');
-        }
-    });
-</script>
+<script src="../../assets/js/dropdown.js"></script>
 
 </html>
