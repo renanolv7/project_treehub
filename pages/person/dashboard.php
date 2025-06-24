@@ -1,6 +1,19 @@
 <?php
     require_once __DIR__ . '/../../config/urls.php';
 ?>
+<?php
+
+session_start();
+
+// verificação da sessao se esta logado
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: ../pages/login.php");
+    exit;
+}
+
+require_once __DIR__ . '/../../services/services_dashboard.php';
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

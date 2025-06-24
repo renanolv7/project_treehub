@@ -51,7 +51,7 @@ function validarCNPJ(cnpj) {
     resto = soma % 11;
     const digito2 = resto < 2 ? 0 : 11 - resto;
 
-    return (digito1 === parseInt(cnpj[12]) && digito2 === parseInt(cnpj[13]);
+    return (digito1 === parseInt(cnpj[12]) && digito2 === parseInt(cnpj[13]));
 }
 
 
