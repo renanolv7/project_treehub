@@ -48,19 +48,19 @@ require_once __DIR__ . '/../../services/services_dashboard.php';
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
                 <div class="bg-gray-100 p-2 rounded-lg flex flex-col justify-center items-center text-center h-40">
                     <p class="text-[16px] text-gray-600 mb-1">Árvores adotadas</p>
-                    <p class="text-2xl font-bold">30</p>
+                    <p class="text-2xl font-bold"><?php echo($totalArvores); ?></p>
                 </div>
                 <div class="bg-gray-100 p-2 rounded-lg flex flex-col justify-center items-center text-center h-40">
                     <p class="text-[16px] text-gray-600 mb-1">Valor total doado</p>
-                    <p class="text-2xl font-bold">R$400</p>
+                    <p class="text-2xl font-bold">R$<?php echo number_format($valorTotal, 2, ',', '.'); ?></p>
                 </div>
                 <div class="bg-gray-100 p-2 rounded-lg flex flex-col justify-center items-center text-center h-40">
                     <p class="text-[16px] text-gray-600 mb-1">Ranking</p>
-                    <p class="text-2xl font-bold">40°</p>
+                    <p class="text-2xl font-bold"><?php echo ($ranking); ?>°</p>
                 </div>
                 
                 <div class="bg-gray-100 p-2 rounded-lg flex items-center justify-center text-center h-40">
-                    <p class="text-[16px] text-gray-600">Outras <span class="font-bold">30 pessoas</span> doaram hoje</p>
+                    <p class="text-[16px] text-gray-600">Outras <span class="font-bold"><?php echo($outrasDoacoesHoje); ?></span> doaram hoje</p>
                 </div>
                 
             </div>
