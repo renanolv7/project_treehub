@@ -23,8 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['usuario_id'] = $usuario['idusuario'];
         $_SESSION['usuario_nome'] = $usuario['nome'];
         $_SESSION['usuario_tipo'] = $usuario['tipo_usuario'];
-        
-        header("Location: ../index.php");
+
+        // direcionamento do usuario para o dashboard correto
+        if ($usuario['tipo_usuario'] == 'pj') {
+            header("Location: ../pages/org/dashboard_org.php");
+        } else {
+            header("Location: ../pages/person/dashboard.php");
+        }
+        exit();
+
     } else {
         // Login falhou
         $_SESSION['erro_login'] = "E-mail ou senha incorretos";
