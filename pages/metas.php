@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . '/../config/urls.php';
+    require_once __DIR__ . '/../services/services_metas.php';    
 ?>
 
 <!DOCTYPE html>
@@ -36,8 +37,8 @@
                     <h3 class="text-xl md:text-2xl font-light">ÁRVORES PLANTADAS</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
                         <div class="absolute h-full w-[10%] bg-[#2f4f1c] rounded-l-2xl"></div>
-                        <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">10</span>
-                        <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">10.000</span>
+                        <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin"><?php echo number_format($totalArvores, 0, ',', '.'); ?></span>
+                        <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin"><?php echo number_format($metaArvores, 0, ',', '.'); ?></span>
                     </div>
                 </div>
 
@@ -46,8 +47,8 @@
                     <h3 class="text-xl md:text-2xl font-light">VALOR ARRECADADO</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
                         <div class="absolute h-full w-[30%] bg-[#2f4f1c] rounded-l-2xl"></div>
-                        <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$10</span>
-                        <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$30.000.000,00</span>
+                        <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$<?php echo number_format($valorArrecadado, 2, ',', '.'); ?></span>
+                        <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$<?php echo number_format($metaValor, 2, ',', '.'); ?></span>
                     </div>
                 </div>
             </section>
@@ -63,7 +64,7 @@
                         <div class="box-org absolute inset-0 rounded-2xl brightness-50"></div>
                         
                         <div class="relative flex justify-center items-center h-full">
-                            <span class="text-white text-3xl md:text-4xl lg:text-5xl font-bold">100+</span>
+                            <span class="text-white text-3xl md:text-4xl lg:text-5xl font-bold"><?php echo $totalOrgs; ?>+</span>
                         </div>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
                 <div class="flex flex-col items-center">
                     <h3 class="text-xl md:text-2xl font-light mb-2 md:mb-3">PESSOAS FÍSICAS</h3>
                     <div class="flex justify-center items-center w-full sm:w-full sm:h-full md:w-48 lg:w-64 xl:w-64 h-32 md:h-40 lg:h-64 xl:h-64 bg-slate-500 rounded-2xl text-white shadow-xl">
-                        <span class="text-3xl md:text-4xl lg:text-5xl font-bold">1000+</span>
+                        <span class="text-3xl md:text-4xl lg:text-5xl font-bold"><?php echo $totalPFs; ?>+</span>
                     </div>
                 </div>
             </section>
