@@ -11,8 +11,8 @@ const donationChart = new Chart(ctx, {
             backgroundColor: 'rgba(0, 0, 0, 0.05)',
             borderColor: 'rgba(0, 0, 0, 1)',
             borderWidth: 2,
-            tension: 0.4, // Deixa a linha suavemente curvada
-            pointRadius: 0, // Remove os pontos da linha
+            tension: 0.4, 
+            pointRadius: 0, 
             fill: false,
         }]
     },
@@ -21,7 +21,7 @@ const donationChart = new Chart(ctx, {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                display: false // Esconde a legenda
+                display: false 
             }
         },
         scales: {
