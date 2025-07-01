@@ -5,17 +5,17 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tree Hub">
     <title>Tree Hub | Metas</title>
 
     <!-- Transformar arquivos HTTP em HTTPS-->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <!-- Link CSS geral -->
     <link href="<?= CSS_URL ?>style_meta.css" rel="stylesheet">

@@ -8,13 +8,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tree Hub">
     <title>Tree Hub | Contato</title>
 
     <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    
 
     <!-- Link CSS geral -->
     <link href="<?= CSS_URL ?>style_contato.css" rel="stylesheet">

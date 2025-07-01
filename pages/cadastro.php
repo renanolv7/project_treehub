@@ -8,10 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tree Hub">
     <title>Tree Hub | Cadastro</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
     
@@ -109,8 +110,6 @@
                 </form>    
             </div>
             
-
-
             <div class="text-center mt-6 p-6 border-t border-gray-200">
                 <p class="text-sm text-gray-950">Já tem uma conta? 
                     <a href="<?= LOGIN ?>login.php" class="font-semibold hover:underline">Login</a>

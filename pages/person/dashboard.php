@@ -14,22 +14,23 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 require_once __DIR__ . '/../../services/services_dashboard.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tree Hub">
     <title>Tree Hub | Dashboard</title>
 
     <!-- Chart.js para o gráfico -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
 
     <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
+
 </head>
 
 <body class="min-h-screen w-auto flex flex-col">
@@ -45,7 +46,8 @@ require_once __DIR__ . '/../../services/services_dashboard.php';
                 </button>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+            <!-- Seção de Estatísticas -->
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
                 <div class="bg-gray-100 p-2 rounded-lg flex flex-col justify-center items-center text-center h-40">
                     <p class="text-[16px] text-gray-600 mb-1">Árvores adotadas</p>
                     <p class="text-2xl font-bold"><?php echo($totalArvores); ?></p>
@@ -62,9 +64,9 @@ require_once __DIR__ . '/../../services/services_dashboard.php';
                 <div class="bg-gray-100 p-2 rounded-lg flex items-center justify-center text-center h-40">
                     <p class="text-[16px] text-gray-600">Outras <span class="font-bold"><?php echo($outrasDoacoesHoje); ?></span> doaram hoje</p>
                 </div>
-                
-            </div>
+            </section>
 
+            <!-- Seção do Gráfico -->
             <div class="bg-gray-100 p-2 sm:p-6 rounded-lg">
                 <h2 class="text-xl font-semibold text-gray-700 mb-6">Progresso de doações</h2>
                 <div class="h-48">
