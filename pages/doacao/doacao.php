@@ -11,7 +11,7 @@
     <title>TreeHub | Personalize sua Doação</title>
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Leaflet.js CSS e JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>

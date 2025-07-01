@@ -28,7 +28,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
 </head>

@@ -12,7 +12,7 @@
     <title>Tree Hub | Cadastro</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
     

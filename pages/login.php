@@ -15,7 +15,7 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="../assets/styles/style_login.css" rel="stylesheet">
 
