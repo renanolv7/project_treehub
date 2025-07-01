@@ -1,7 +1,7 @@
 <header class="flex h-[60px] px-4">
     <div class="flex justify-between items-center w-full mr-5">
         <div class="logo">
-            <a href="index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
+            <a href="<?= INICIO ?>index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
         </div>
     
         <nav class="hidden md:flex items-center space-x-6">
