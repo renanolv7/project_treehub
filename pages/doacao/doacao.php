@@ -7,10 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tree Hub">
     <title>TreeHub | Personalize sua Doação</title>
     
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
     
     <!-- Leaflet.js CSS e JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
@@ -30,15 +31,15 @@
     <main class="m-3 bg-white flex-grow rounded-xl overflow-hidden flex flex-col shadow-lg">
         
         <header class="flex justify-between items-center mb-6 px-8 py-6 w-full">
-            <div id="back-btn" class="nav-arrow text-gray-600 hover:text-gray-800 transition-colors duration-300 cursor-pointer disabled:text-gray-300 disabled:cursor-not-allowed">
+            <button id="back-btn" class="nav-arrow text-gray-600 hover:text-gray-800 transition-colors duration-300 cursor-pointer disabled:text-gray-300 disabled:cursor-not-allowed">
                 <i class="fas fa-arrow-left fa-2x"></i>
-            </div>
+            </button>
 
             <h1 class="text-3xl font-extrabold text-gray-700 text-center">PERSONALIZE SUA DOAÇÃO</h1>
             
-            <div id="forward-btn" class="nav-arrow text-gray-600 hover:text-gray-800 transition-colors duration-300 cursor-pointer disabled:text-gray-300 disabled:cursor-not-allowed">
+            <button id="forward-btn" class="nav-arrow text-gray-600 hover:text-gray-800 transition-colors duration-300 cursor-pointer disabled:text-gray-300 disabled:cursor-not-allowed">
                 <i class="fas fa-arrow-right fa-2x"></i>
-            </div>
+            </button>
         </header>
     
         <div class="container mx-auto px-10 flex-grow">
@@ -48,11 +49,11 @@
                         <div class="flex flex-col justify-center space-y-8">
                             <div>
                                 <label for="tree-name" class="block text-lg font-semibold text-gray-600 mb-2">Nome para a sua árvore</label>
-                                <input type="text" id="tree-name" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition duration-200" placeholder="Ex: Minha Esperança Verde">
+                                <input type="text" id="tree-name" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2f4f1c] focus:border-[#2f4f1c] outline-none transition duration-200" placeholder="Ex: Minha Esperança Verde">
                             </div>
                             <div>
                                 <label for="tree-species" class="block text-lg font-semibold text-gray-600 mb-2">Espécie da sua árvore</label>
-                                <select id="tree-species" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition duration-200 bg-white">
+                                <select id="tree-species" class="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2f4f1c] focus:border-[#2f4f1c] outline-none transition duration-200 bg-white">
                                     <option value="">Selecione uma espécie</option>
                                     <option value="Ipê Amarelo">Ipê Amarelo</option>
                                     <option value="Pau-Brasil">Pau-Brasil</option>
@@ -79,12 +80,12 @@
                     <h1 class="text-3xl font-bold text-center text-gray-700 mb-4">ESCOLHA O VALOR</h1>
                     <p id="donation-summary-1" class="text-center text-gray-500 mb-8 text-lg"></p>
                     <div class="flex justify-center flex-wrap gap-4 mb-8">
-                        <button class="donation-amount-btn w-32 bg-white border-2 border-green-500 text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300" data-amount="25">R$ 25</button>
-                        <button class="donation-amount-btn w-32 bg-white border-2 border-green-500 text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300" data-amount="50">R$ 50</button>
-                        <button class="donation-amount-btn w-32 bg-white border-2 border-green-500 text-green-600 font-bold py-3 px-6 rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300" data-amount="100">R$ 100</button>
+                        <button class="donation-amount-btn w-32 bg-white border-2 border-[#2f4f1c] text-[#2f4f1c] font-bold py-3 px-6 rounded-lg hover:bg-[#2f4f1c] hover:text-white transition-all duration-300" data-amount="25">R$ 25</button>
+                        <button class="donation-amount-btn w-32 bg-white border-2 border-[#2f4f1c] text-[#2f4f1c] font-bold py-3 px-6 rounded-lg hover:bg-[#2f4f1c] hover:text-white transition-all duration-300" data-amount="50">R$ 50</button>
+                        <button class="donation-amount-btn w-32 bg-white border-2 border-[#2f4f1c] text-[#2f4f1c] font-bold py-3 px-6 rounded-lg hover:bg-[#2f4f1c] hover:text-white transition-all duration-300" data-amount="100">R$ 100</button>
                     </div>
                     <div class="text-center">
-                         <input type="number" id="custom-amount" placeholder="Outro valor (R$)" class="text-center w-48 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+                         <input type="number" id="custom-amount" placeholder="Outro valor (R$)" class="text-center w-48 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:border-[#2f4f1c] transition">
                     </div>
                 </div>
     
@@ -99,7 +100,7 @@
                                 <input type="text" id="card-expiry" placeholder="Validade (MM/AA)" class="w-1/2 px-4 py-3 border border-gray-300 rounded-lg">
                                 <input type="text" id="card-cvc" placeholder="CVC" class="w-1/2 px-4 py-3 border border-gray-300 rounded-lg">
                             </div>
-                            <button id="pay-button" class="w-full bg-green-500 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-green-600 flex items-center justify-center gap-3 shadow-lg">
+                            <button id="pay-button" class="w-full bg-[#2f4f1c] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#2a4719] flex items-center justify-center gap-3 shadow-lg">
                                <span id="pay-button-text"><i class="fas fa-lock"></i> Doar Agora</span>
                                <div id="pay-spinner" class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin hidden"></div>
                             </button>
@@ -109,11 +110,12 @@
     
                 <div id="step-4" class="step text-center">
                      <div class="w-24 h-24 bg-green-100 rounded-full mx-auto flex items-center justify-center mb-6">
-                         <i class="fas fa-check-circle text-6xl text-green-500"></i>
+                         <i class="fas fa-check-circle text-6xl text-[#2f4f1c]"></i>
                     </div>
                     <h1 class="text-3xl font-bold text-gray-800 mb-2">OBRIGADO!</h1>
                     <p id="final-summary" class="text-gray-600 mb-8 text-lg"></p>
                     <button id="reset-button" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Plantar outra árvore</button>
+                    <button class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800"><a href="">Ir para dashboard</a></button>
                 </div>
             </div>
         </div>
