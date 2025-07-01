@@ -17,7 +17,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com" defer></script>
 
-    <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
+    <link href="../assets/styles/style_login.css" rel="stylesheet">
 
 </head>
 
