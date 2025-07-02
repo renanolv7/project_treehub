@@ -31,9 +31,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
+
 </head>
 
-<body class="min-h-screen w-auto flex flex-col">
+<body class="min-h-screen w-auto flex flex-col bg-gray-50">
     <?php include(__DIR__ . '/../../includes/header_person.php');?>
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl">

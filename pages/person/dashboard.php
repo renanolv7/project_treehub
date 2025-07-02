@@ -33,7 +33,7 @@ require_once __DIR__ . '/../../services/services_dashboard.php';
 
 </head>
 
-<body class="min-h-screen w-auto flex flex-col">
+<body class="min-h-screen w-auto flex flex-col bg-gray-50">
     <?php include(__DIR__ . '/../../includes/header_person.php');?>
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl">

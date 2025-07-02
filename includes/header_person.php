@@ -1,4 +1,4 @@
-<header class="flex h-[60px] px-4">
+<header class="flex h-[60px] w-auto px-4">
     <div class="flex justify-between items-center w-full mr-5">
         <div class="logo">
             <a href="<?= INICIO ?>index.php"><img class="w-24" src="<?= IMAGENS ?>logo-tree-hub.png" alt="Logo" srcset=""></a>
@@ -28,7 +28,7 @@
                 <img src="<?= ICONES ?>do-utilizador.png">
             </button>
             <div id="user-menu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alterar dados</a>
+                <a href="<?= ALTERAR_DADOS ?>alterar_dados.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Alterar dados</a>
                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Configurações</a>
                 <a href="../../services/logout_service.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sair</a>
             </div>

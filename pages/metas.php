@@ -2,7 +2,6 @@
     require_once __DIR__ . '/../config/urls.php';
     require_once __DIR__ . '/../services/services_metas.php';    
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,7 +20,7 @@
     <link href="<?= CSS_URL ?>style_meta.css" rel="stylesheet">
 
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen w-auto flex flex-col bg-gray-50">
     
     <?php include('../includes/header_principal.php') ?>
     

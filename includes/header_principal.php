@@ -1,4 +1,4 @@
-<header class="flex h-[60px] w-auto">
+<header class="flex h-[60px] w-auto px-3">
     
     <div class="flex justify-between items-center w-full mr-5">
         <div class="logo">
@@ -22,7 +22,7 @@
 
     </div>
 
-    <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3 mr-3">
+    <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3">
         <a href="<?= DOACAO ?>doacao.php"><button class="border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
         <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
     </div>
