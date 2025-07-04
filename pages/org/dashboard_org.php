@@ -35,16 +35,16 @@
 </head>
 
 <body class="min-h-screen w-auto flex flex-col bg-gray-50">
-    <?php include(__DIR__ . '/../../includes/header_person.php');?>
+    <?php include(__DIR__ . '/../../includes/header_org.php');?>
     
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl">
         <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8">
 
             <div class="flex justify-end my-4">
-                <button class="flex items-center space-x-2 bg-black text-white font-semibold px-5 py-2.5 rounded-md hover:bg-gray-800">
+                <a href="<?= DOACAO ?>doacao.php" class="flex items-center space-x-2 bg-black text-white font-semibold px-5 py-2.5 rounded-md hover:bg-gray-800">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                     <span>Doar</span>
-                </button>
+                </a>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
