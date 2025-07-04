@@ -24,7 +24,7 @@
 
     <main class="w-screen h-screen flex justify-center items-center">
 
-        <div class="box w-[34rem] h-fit bg-[#fffefe] rounded-2xl m-5 p-8 shadow-xl">
+        <div class="box w-[35rem] h-fit bg-[#fffefe] rounded-2xl m-5 p-8 shadow-xl">
 
             <div class="header-box">
                 <h1 class="text-2xl font-normal text-gray-950">Começar a usar</h1>
@@ -36,6 +36,17 @@
                 <form id="form-cadastro" action="../services/cadastro_service.php" method="post">
 
                     <div class="input-group space-y-4">
+                        <!-- Nome -->
+                        <div>
+                            <label for="nome" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                            <input 
+                                type="name" 
+                                id="name" 
+                                name="name" 
+                                required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-treehub-green focus:border-transparent"
+                                placeholder="Renan Vinicius de Oliveira">
+                        </div>
                         
                         <!-- Email -->
                         <div>
