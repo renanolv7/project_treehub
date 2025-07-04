@@ -115,7 +115,7 @@
                     <h1 class="text-3xl font-bold text-gray-800 mb-2">OBRIGADO!</h1>
                     <p id="final-summary" class="text-gray-600 mb-8 text-lg"></p>
                     <button id="reset-button" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Plantar outra árvore</button>
-                    <button class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800"><a href="">Ir para dashboard</a></button>
+                    <a href="../org/dashboard_org.php"><button class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Ir para dashboard</button></a>
                 </div>
             </div>
         </div>
