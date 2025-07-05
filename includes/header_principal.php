@@ -1,3 +1,6 @@
+<head>
+    <link href="<?= CSS_URL ?>animation_bar_link.css" rel="stylesheet">
+</head>
 <header class="flex h-[60px] w-auto px-3">
     
     <div class="flex justify-between items-center w-full mr-5">
@@ -6,10 +9,10 @@
         </div>
     
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="<?= INICIO ?>index.php" class="">Inicio</a>
-            <a href="../pages/sobre.php" class="">Sobre</a>
-            <a href="<?= METAS ?>metas.php" class="">Metas</a>
-            <a href="<?= CONTATO ?>contato.php" class="">Contato</a>
+            <a href="<?= INICIO ?>index.php" class="<?= ($paginaAtual == 'index.php') ? 'active' : '' ?>">Inicio</a>
+            <a href="<?= SOBRE ?>sobre.php" class="<?= ($paginaAtual == 'sobre.php') ? 'active' : '' ?>">Sobre</a>
+            <a href="<?= METAS ?>metas.php" class="<?= ($paginaAtual == 'metas.php') ? 'active' : '' ?>">Metas</a>
+            <a href="<?= CONTATO ?>contato.php" class="<?= ($paginaAtual == 'contato.php') ? 'active' : '' ?>">Contato</a>
         </nav>
         
         <div class="hidden md:block w-1/4 h-px bg-gray-900"></div>
@@ -23,8 +26,9 @@
     </div>
 
     <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3">
-        <a href="<?= DOACAO ?>doacao.php"><button class="border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
-        <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
-    </div>
+        <a href="<?= DOACAO ?>doacao.php"><button class="btn-4 border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
         
+        <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
+    </div>     
 </header>
+
