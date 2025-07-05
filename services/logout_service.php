@@ -16,6 +16,6 @@ if (ini_get("session.use_cookies")) {
 // destruir sessão 
 session_destroy();
 
-header("Location: /project_treehub/pages/login.php");
+header("Location: ../pages/login.php");
 exit;
 ?> 
