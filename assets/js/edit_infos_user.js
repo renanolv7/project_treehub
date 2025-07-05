@@ -6,6 +6,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalCancelBtn = document.getElementById('modalCancelBtn');
     let onConfirmAction = null; // Armazena a função a ser executada ao confirmar
 
+    // Funcao para carregar os dados do usuario
+    const loadUserData = async () => {
+        try {
+            // Salva JSON dados do usuario 
+            const response = await fetch('../../services/pegar_dados_service.php');
+            const data = await response.json();
+
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+
+            // Preenchimento dos campos
+            // Uso de seletores para preenchimento dos campos do usuario
+            document.querySelector('#nome-row .data-text').textContent = data.nome || 'Não informado';
+            document.querySelector('#nome-row .data-input').value = data.nome || '';
+            
+            document.querySelector('#email-row .data-text').textContent = data.email || 'Não informado';
+            document.querySelector('#email-row .data-input').value = data.email || '';
+
+            document.querySelector('#celular-row .data-text').textContent = data.telefone || 'Não informado';
+            document.querySelector('#celular-row .data-input').value = data.telefone || '';
+
+        } catch (error) {
+            console.error('Falha ao buscar dados do usuário:', error);
+        }
+    };
+
+    loadUserData(); // funcao para carregar os dados
+
+    
     // Função para fechar o modal
     const closeModal = () => {
         modal.classList.add('modal-hidden');
@@ -58,24 +89,47 @@ document.addEventListener('DOMContentLoaded', () => {
         cancelBtn.addEventListener('click', switchToDisplayMode);
 
         // Modificado: Botão Salvar agora abre o modal
+
         saveBtn.addEventListener('click', () => {
-            // Define a ação que o botão de confirmação do modal irá executar
-            const saveAction = () => {
-                const newValue = dataInput.value;
-                
-                // AQUI você faria a chamada para o backend (fetch para um script PHP)
-                
-                if (dataInput.type === 'password') {
-                    if (newValue.trim() !== '') {
-                        dataText.textContent = '************';
+            
+            const fieldName = dataInput.id; // 'id' do input
+            const newValue = dataInput.value;
+
+            const saveAction = async () => {
+                try {
+                    const response = await fetch('../../services/alterar_dados_service', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            field: fieldName,
+                            value: newValue
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        if (dataInput.type === 'password') {
+                            dataText.textContent = '************';
+                        } else {
+                            dataText.textContent = newValue;
+                        }
+                        alert(result.message); 
+                    } else {
+                        alert('Erro: ' + result.message);
                     }
-                } else {
-                    dataText.textContent = newValue;
+
+                } catch (error) {
+                    console.error('Falha na comunicação com o servidor:', error);
+                    alert('Não foi possível salvar os dados. Tente novamente.');
+                } finally {
+                    switchToDisplayMode();
                 }
-                switchToDisplayMode();
             };
 
-            openModal(saveAction); // Abre o modal com a ação de salvar definida
+            openModal(saveAction); // Abre o modal de confirmação com a nova ação de salvar
         });
     });
 });
