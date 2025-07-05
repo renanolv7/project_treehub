@@ -41,11 +41,11 @@
         <div class="m-6 flex justify-center h-full">
             <div class="w-full my-2 mx-4 md:mx-16 lg:mx-32">
                 <div class="p-6 space-y-4">
-                    <div class="info-row py-4 border-b border-gray-200">
+                    <div id="nome-row" class="info-row py-4 border-b border-gray-200">
                         <div class="view-container display-view flex justify-between items-center">
                             <div>
                                 <p class="font-semibold text-gray-800">Nome</p>
-                                <p class="text-gray-600 data-text">Renan Oliveira</p>
+                                <p class="text-gray-600 data-text"></p>
                             </div>
                             <button class="edit-btn px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors">Editar</button>
                         </div>
@@ -59,11 +59,11 @@
                         </div>
                     </div>
     
-                    <div class="info-row py-4 border-b border-gray-200">
+                    <div id="email-row" class="info-row py-4 border-b border-gray-200">
                         <div class="view-container display-view flex justify-between items-center">
                             <div>
                                 <p class="font-semibold text-gray-800">E-mail</p>
-                                <p class="text-gray-600 data-text">teste@gmail.com</p>
+                                <p class="text-gray-600 data-text"></p>
                             </div>
                             <button class="edit-btn px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors">Editar</button>
                         </div>
@@ -77,11 +77,11 @@
                         </div>
                     </div>
     
-                    <div class="info-row py-4 border-b border-gray-200">
+                    <div id="celular-row" class="info-row py-4 border-b border-gray-200">
                         <div class="view-container display-view flex justify-between items-center">
                             <div>
                                 <p class="font-semibold text-gray-800">Número de celular principal</p>
-                                <p class="text-gray-600 data-text">+55912345678</p>
+                                <p class="text-gray-600 data-text"></p>
                             </div>
                             <button class="edit-btn px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors">Editar</button>
                         </div>
