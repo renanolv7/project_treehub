@@ -1,18 +1,21 @@
 <?php
     require_once __DIR__ . '/../../config/urls.php';
+    session_start();
+
+    // verificação da sessao se esta logado
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        header("Location: ../pages/login.php");
+        exit;
+
+    if ($_SESSION['usuario_tipo'] !== 'pf') {
+        header("Location: /project_treehub/pages/org/dashboard_org.php");
+        exit;
+    }
+    }
+
+    require_once __DIR__ . '/../../services/services_dashboard.php';    
 ?>
-<?php
 
-session_start();
-
-// verificação da sessao se esta logado
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header("Location: ../pages/login.php");
-    exit;
-}
-
-require_once __DIR__ . '/../../services/services_dashboard.php';
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
