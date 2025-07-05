@@ -96,13 +96,7 @@
 
             </section>
         </div>
-        
-
     </main>
-    
-    <footer>
-        <?php include('C:\wamp64\www\dev\project_treehub\includes\footer.php') ?>
-    </footer>
 </body>
 
 </html>

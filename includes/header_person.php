@@ -6,7 +6,7 @@
     
         <nav class="hidden md:flex items-center space-x-6">
             <a href="index.php" class="">Inicio</a>
-            <a href="#" class="">Dashboard</a>
+            <a href="<?= DASHBOARD_PERSON ?>dashboard.php" class="">Dashboard</a>
             <a href="#" class="">Doações</a>
         </nav>
         
