@@ -1,8 +1,5 @@
 <?php
     require_once __DIR__ . '/../../config/urls.php';
-?>
-
-<?php
 
     session_start();
 
@@ -12,8 +9,14 @@
     exit;
     }
 
-    require_once __DIR__ . '/../../services/services_dashboard.php';
+    if ($_SESSION['usuario_tipo'] !== 'pj') {
+        header("Location: project_treehub/pages/person/dashboard.php");
+        exit;
+    }
+
+    require_once __DIR__ . '/../../services/services_dashboard.php';    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
