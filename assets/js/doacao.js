@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         saveState();
     });
 
-    payButton.addEventListener('click', () => {
+    payButton.addEventListener('click', async () => { // Adicionamos 'async' para usar 'await'
         const cardFields = ['card-name', 'card-number', 'card-expiry', 'card-cvc'];
         const isInvalid = cardFields.some(id => !document.getElementById(id).value.trim());
         if (isInvalid) {
@@ -196,13 +196,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Desativa o botão e mostra o spinner
         payButton.disabled = true;
         paySpinner.classList.remove('hidden');
         payButtonText.textContent = 'Processando...';
 
-        setTimeout(() => {
-            goToNextStep(); 
-        }, 2000); 
+        try {
+            // Envia os dados do estado da doação
+            const response = await fetch('../../services/doacao_service.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(donationState) // Envia o objeto 'donationState' 
+            });
+
+            const result = await response.json();
+            // verificacao se houve erro    
+            if (result.success) {
+                goToNextStep();
+            } else {
+                showAlert(result.message || 'Ocorreu um erro ao processar sua doação.');
+            }
+
+        } catch (error) {
+            console.error('Falha na comunicação:', error);
+            showAlert('Não foi possível conectar ao servidor. Verifique sua conexão.');
+        } finally {
+            // Reativa o botão e esconde o spinner, independentemente do resultado
+            payButton.disabled = false;
+            paySpinner.classList.add('hidden');
+            payButtonText.innerHTML = '<i class="fas fa-lock"></i> Doar Agora';
+        }
     });
 
     resetButton.addEventListener('click', () => {

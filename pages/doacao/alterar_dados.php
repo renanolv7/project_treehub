@@ -1,5 +1,12 @@
 <?php
     require_once __DIR__ . '/../../config/urls.php';
+    session_start();
+
+    // verificação da sessao se esta logado
+    if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+        header("Location: ../pages/login.php");
+        exit;
+    }    
 ?>
 
 <!DOCTYPE html>
