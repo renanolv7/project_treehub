@@ -1,3 +1,6 @@
+<head>
+    <link href="<?= CSS_URL ?>animation_bar_link.css" rel="stylesheet">
+</head>
 <header class="flex h-[60px] w-auto px-4">
     <div class="flex justify-between items-center w-full mr-5">
         <div class="logo">
@@ -5,7 +8,7 @@
         </div>
     
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="index.php" class="">Inicio</a>
+            <a href="<?= INICIO ?>index.php" class="">Inicio</a>
             <a href="<?= DASHBOARD_PERSON ?>dashboard.php" class="">Dashboard</a>
             <a href="#" class="">Doações</a>
         </nav>
