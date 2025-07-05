@@ -1,0 +1,33 @@
+
+nav a {
+    position: relative;
+    padding-bottom: 2px;
+    color: inherit;
+    transition: color 0.5s; 
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #02300b;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);   
+}
+
+nav a.active {
+    font-weight: 500; 
+}
+
+nav a.active::after {
+    transform: scaleX(1);
+}
+
