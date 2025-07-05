@@ -1,5 +1,6 @@
 <?php
     require_once __DIR__ . '/../config/urls.php';
+    $paginaAtual = basename($_SERVER['SCRIPT_NAME']);  
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
     
 
     <!-- Link CSS geral -->
-    <link href="<?= CSS_URL ?>style_contato.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>contato.css" rel="stylesheet">
 
 </head>
 <body class="min-h-screen flex flex-col ">

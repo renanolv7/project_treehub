@@ -23,7 +23,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="../../assets/styles/style_doacao.css">
+    <link rel="stylesheet" href="<?= CSS_URL ?>doacao.css">
 </head>
 
 <body class="min-h-screen flex flex-col bg-gray-50">

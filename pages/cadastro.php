@@ -14,7 +14,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="<?= CSS_URL ?>style_login.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>login.css" rel="stylesheet">
     
 </head>
 

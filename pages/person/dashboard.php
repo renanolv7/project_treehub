@@ -29,7 +29,7 @@ require_once __DIR__ . '/../../services/services_dashboard.php';
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>dashboard.css" rel="stylesheet">
 
 </head>
 

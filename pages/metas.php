@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__ . '/../config/urls.php';
-    require_once __DIR__ . '/../services/services_metas.php';    
+    require_once __DIR__ . '/../services/services_metas.php';  
+    $paginaAtual = basename($_SERVER['SCRIPT_NAME']);  
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Link CSS geral -->
-    <link href="<?= CSS_URL ?>style_meta.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>meta.css" rel="stylesheet">
 
 </head>
 <body class="min-h-screen w-auto flex flex-col bg-gray-50">
@@ -31,11 +32,16 @@
             <!-- Seção das barras de progresso -->
             <section class="w-full lg:w-2/5 space-y-6 md:space-y-8 lg:space-y-10">
                 
-                <!-- Árvores Plantadas -->
                 <div class="space-y-3">
                     <h3 class="text-xl md:text-2xl font-light">ÁRVORES PLANTADAS</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
-                        <div class="absolute h-full w-[10%] bg-[#2f4f1c] rounded-l-2xl"></div>
+                       
+                        <div id="progress-bar-arvores"
+                             class="absolute h-full bg-[#2f4f1c] rounded-l-2xl"
+                             style="width: 0%;"
+                             data-atual="<?php echo 1000; ?>"
+                             data-meta="<?php echo $metaArvores; ?>">
+                        </div>
                         <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin"><?php echo number_format($totalArvores, 0, ',', '.'); ?></span>
                         <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin"><?php echo number_format($metaArvores, 0, ',', '.'); ?></span>
                     </div>
@@ -45,7 +51,13 @@
                 <div class="space-y-2">
                     <h3 class="text-xl md:text-2xl font-light">VALOR ARRECADADO</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
-                        <div class="absolute h-full w-[30%] bg-[#2f4f1c] rounded-l-2xl"></div>
+                        <!-- A mesma estrutura é aplicada aqui -->
+                        <div id="progress-bar-valor"
+                             class="absolute h-full bg-[#2f4f1c] rounded-l-2xl"
+                             style="width: 0%;"
+                             data-atual="<?php echo $valorArrecadado; ?>"
+                             data-meta="<?php echo $metaValor; ?>">
+                        </div>
                         <span class="absolute left-2 md:left-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$<?php echo number_format($valorArrecadado, 2, ',', '.'); ?></span>
                         <span class="absolute right-2 md:right-4 text-white text-xl md:text-2xl lg:text-3xl font-thin">R$<?php echo number_format($metaValor, 2, ',', '.'); ?></span>
                     </div>
@@ -80,5 +92,6 @@
     </main>
 
 </body>
+<script src="<?= ANIMATION_PROGRESS ?>animation_progress.js"></script>
 
 </html> 

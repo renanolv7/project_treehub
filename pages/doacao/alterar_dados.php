@@ -17,7 +17,7 @@
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link href="<?= CSS_URL ?>style_dashboard.css" rel="stylesheet">
+    <link href="<?= CSS_URL ?>dashboard.css" rel="stylesheet">
 
     <style>
         /* Adiciona uma transição suave para uma melhor experiência do usuário */
