@@ -21,7 +21,7 @@
 
     <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3">
         <div class="flex items-center h-full">
-            <p class="name">Renan Oliveira</p>        
+            <p class="name"><?php echo htmlspecialchars($_SESSION['usuario_nome']); ?></p>        
         </div>
         <div class="relative">
             <button id="user-menu-button" type="button" class="flex items-center p-2">
