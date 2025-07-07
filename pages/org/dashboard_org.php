@@ -10,7 +10,7 @@
     }
 
     if ($_SESSION['usuario_tipo'] !== 'pj') {
-        header("Location: project_treehub/pages/person/dashboard.php");
+        header("Location: /project_treehub/pages/person/dashboard.php");
         exit;
     }
 
