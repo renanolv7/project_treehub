@@ -1,0 +1,47 @@
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body { 
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.sidebar-link.active {
+    background-color: #e5e7eb; 
+    font-weight: 600;
+}
+
+.view-container, #confirmationModal, .sidebar-link {
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.view-container, #confirmationModal {
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
