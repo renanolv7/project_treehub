@@ -26,7 +26,7 @@
     </div>
 
     <div class="flex justify-evenly items-end bg-white w-80 rounded-t-lg mt-3">
-        <a href="<?= DOACAO ?>doacao.php"><button class="btn-4 border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
+        <a href="<?= LOGIN ?>login.php"><button class="btn-4 border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
         
         <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
     </div>     
