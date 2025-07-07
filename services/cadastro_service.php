@@ -7,6 +7,7 @@ $connection = new mysqli($servername, $username, $password, $dbname);
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $connection->real_escape_string($_POST['name']);
     $email = $connection->real_escape_string($_POST['email']);
     $senha = $_POST['senha'];
     $tipo_usuario = $connection->real_escape_string($_POST['tipo_cadastro']);
@@ -24,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $insert_sql = "INSERT INTO usuario (email, senha, tipo_usuario, cpf_cnpj) VALUES (?, SHA(?), ?, ?)";
+    $insert_sql = "INSERT INTO usuario (nome, email, senha, tipo_usuario, cpf_cnpj) VALUES (?, ?, SHA(?), ?, ?)";
     $stmt = $connection->prepare($insert_sql);
-    $stmt->bind_param("ssss", $email, $senha, $tipo_usuario, $documento);
+    $stmt->bind_param("sssss", $nome, $email, $senha, $tipo_usuario, $documento);
 
     if ($stmt->execute()) {
         $_SESSION['sucesso'] = "Cadastro realizado com sucesso!";
