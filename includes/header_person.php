@@ -1,3 +1,7 @@
+<?php
+    require_once __DIR__ . '../../config/urls.php';
+    $paginaAtual = basename($_SERVER['SCRIPT_NAME']);  
+?>
 <head>
     <link href="<?= CSS_URL ?>animation_bar_link.css" rel="stylesheet">
 </head>
@@ -8,11 +12,11 @@
         </div>
     
         <nav class="hidden md:flex items-center space-x-6">
-            <a href="<?= INICIO ?>index.php" class="">Inicio</a>
-            <a href="<?= DASHBOARD_PERSON ?>dashboard.php" class="">Dashboard</a>
-            <a href="#" class="">Doações</a>
+            <a href="<?= INICIO ?>index.php" class="<?= ($paginaAtual == 'index.php') ? 'active' : '' ?>">Inicio</a>
+            <a href="<?= DASHBOARD_PERSON ?>dashboard.php" class="<?= ($paginaAtual == 'dashboard.php') ? 'active' : '' ?>">Dashboard</a>
+            <a href="<?= DOACOES_PERSON ?>lista_doacoes.php" class="<?= ($paginaAtual == 'lista_doacoes.php') ? 'active' : '' ?>">Doações</a>
         </nav>
-        
+       
         <div class="hidden md:block w-1/4 h-px bg-gray-900"></div>
 
         <div class="hidden md:flex space-x-4">
