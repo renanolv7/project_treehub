@@ -1,4 +1,16 @@
-<head>
+<?php
+$linkApoie = LOGIN . 'login.php';
+// verificacao se o usuário está logado
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+    // se usuario estiver logado, verifica o tipo de usuário para direcionando correto 
+    if ($_SESSION['usuario_tipo'] == 'pj') {
+        $linkApoie = BASE_URL . 'pages/org/dashboard_org.php';
+    } else {
+        $linkApoie = BASE_URL . 'pages/person/dashboard.php';
+    }
+}
+?>
+<head>  
     <link href="<?= CSS_URL ?>animation_bar_link.css" rel="stylesheet">
 </head>
 <header class="flex h-[60px] w-auto px-3">
@@ -24,7 +36,7 @@
     </div>
 
     <div class="flex justify-evenly bg-white w-80 rounded-t-lg mt-3 items-center">
-        <a href="<?= LOGIN ?>login.php"><button class="btn-4 border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
+        <a href="<?= $linkApoie ?>"><button class="btn-4 border-2 border-[#02300b] px-6 py-1 rounded-lg font-semibold">APOIE A CAUSA</button></a>
         <a class="items-center" href=""><img src="<?= ICONES ?>do-utilizador.png"></a>
     </div>     
 </header>
