@@ -36,10 +36,10 @@
 
             <aside class="bg-gray-100 rounded-lg w-1/4 h-auto">
                 <nav class="flex flex-col space-y-1  p-3 h-auto">
-                    <a href="#" class="sidebar-link p-3 rounded-lg text-gray-700 hover:bg-gray-200 active" data-target="profile-section">Perfil Público</a>
-                    <a href="#" class="sidebar-link p-3 rounded-lg text-gray-700 hover:bg-gray-200" data-target="account-section">Conta</a>
-                    <a href="#" class="sidebar-link p-3 rounded-lg text-gray-700 hover:bg-gray-200" data-target="notifications-section">Notificações</a>
-                    <a href="#" class="sidebar-link p-3 rounded-lg text-gray-700 hover:bg-gray-200" data-target="security-section">Segurança</a>
+                    <a href="#" class="sidebar-link p-3 rounded-lg active" data-target="profile-section">Perfil Público</a>
+                    <a href="#" class="sidebar-link p-3 rounded-lg" data-target="account-section">Conta</a>
+                    <a href="#" class="sidebar-link p-3 rounded-lg" data-target="notifications-section">Notificações</a>
+                    <a href="#" class="sidebar-link p-3 rounded-lg" data-target="security-section">Segurança</a>
                 </nav>
             </aside>
     
