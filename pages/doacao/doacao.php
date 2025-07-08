@@ -98,8 +98,23 @@
     
                 <div id="step-3" class="step">
                     <h1 class="text-3xl font-bold text-center text-gray-700 mb-4">PAGAMENTO</h1>
-                    <p id="donation-summary-2" class="text-center text-gray-500 mb-8 text-lg"></p>
-                    <div class="max-w-md mx-auto">
+                    <p id="donation-summary-2" class="text-center text-gray-500 mb-4 text-lg"></p>
+                    
+                    <!-- Seleção do método de pagamento -->
+                    <div class="max-w-md mx-auto mb-1">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4 text-center">Escolha o método de pagamento</h3>
+                        <div class="flex gap-4 justify-center">
+                            <button id="payment-card-btn" class="payment-method-btn flex-1 bg-white border-2 border-[#2f4f1c] text-[#2f4f1c] font-bold py-3 px-6 rounded-lg hover:bg-[#2f4f1c] hover:text-white transition-all duration-300 selected">
+                                <i class="fas fa-credit-card mr-2"></i>Cartão
+                            </button>
+                            <button id="payment-pix-btn" class="payment-method-btn flex-1 bg-white border-2 border-[#2f4f1c] text-[#2f4f1c] font-bold py-3 px-6 rounded-lg hover:bg-[#2f4f1c] hover:text-white transition-all duration-300">
+                                <i class="fas fa-qrcode mr-2"></i>Pix
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Cartão -->
+                    <div id="card-payment-form" class="max-w-md mx-auto">
                         <div class="space-y-4">
                             <input type="text" id="card-name" placeholder="Nome no cartão" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
                             <input type="text" id="card-number" placeholder="Número do cartão" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
@@ -113,6 +128,33 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Formulário de Pix -->
+                    <div id="pix-payment-form" class="max-w-md mx-auto hidden">
+                        <div class="text-center">
+                            <div class="bg-white p-6 rounded-lg border-2 border-gray-300">
+                                <div class="w-48 h-48 mx-auto bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+                                    <div class="text-center">
+                                        <img src="../../assets/images/qrcode.jpg" alt="" srcset="">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-600 mb-2">Chave Pix Fake:</p>
+                                    <p class="text-xs bg-gray-100 p-2 rounded font-mono break-all">treehub@exemplo.com.br</p>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <p class="text-sm text-yellow-800">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    Este é um QR Code fake apenas para demonstração do projeto.
+                                </p>
+                            </div>
+                            <button id="pix-confirm-button" class="w-full bg-[#2f4f1c] text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-[#2a4719] flex items-center justify-center gap-3 shadow-lg">
+                               <span id="pix-button-text"><i class="fas fa-check"></i> Confirmar Pagamento Pix</span>
+                               <div id="pix-spinner" class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin hidden"></div>
+                            </button>
+                        </div>
+                    </div>
                 </div>
     
                 <div id="step-4" class="step text-center">
@@ -122,7 +164,7 @@
                     <h1 class="text-3xl font-bold text-gray-800 mb-2">OBRIGADO!</h1>
                     <p id="final-summary" class="text-gray-600 mb-8 text-lg"></p>
                     <button id="reset-button" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Plantar outra árvore</button>
-                    <a href="../org/dashboard_org.php"><button class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Ir para dashboard</button></a>
+                    <a href="<?= DASHBOARD_PERSON ?>dashboard.php"><button class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800">Ir para dashboard</button></a>
                 </div>
             </div>
         </div>
@@ -130,8 +172,9 @@
     
     <div id="custom-alert" class="custom-alert bg-red-600 text-white font-medium py-4 px-8 rounded-lg shadow-md"></div>
 
-    <script src="../../assets/js/doacao.js"></script>
-    
 </body>
+
+<script src="doacao.js"></script>
+
 
 </html>

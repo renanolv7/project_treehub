@@ -12,7 +12,7 @@ if (!isset($_SESSION['usuario_id'])) {
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-if (!$data || empty($data['donationAmount']) || empty($data['treeName']) || empty($data['treeSpecies']) || empty($data['selectedLocation'])) {
+if (!$data || empty($data['donationAmount']) || empty($data['treeName']) || empty($data['treeSpecies']) || empty($data['selectedLocation']) || empty($data['paymentMethod'])) {
     $response['message'] = 'Dados da doação incompletos.';
     echo json_encode($response);
     exit;
@@ -25,18 +25,18 @@ $connection->begin_transaction();
 
 try {
     // Inserção na tabela 'doacao'
-    $sql_doacao = "INSERT INTO doacao (idusuario, valor, quantidade_arvores, metodo_pagamento, status, localizacao) VALUES (?, ?, 1, 'cartao', 'concluido', ?)";
+    $sql_doacao = "INSERT INTO doacao (idusuario, valor, quantidade_arvores, metodo_pagamento, status, localizacao) VALUES (?, ?, 1, ?, 'concluido', ?)";
     $stmt_doacao = $connection->prepare($sql_doacao);
-    $stmt_doacao->bind_param("ids", $_SESSION['usuario_id'], $data['donationAmount'], $data['selectedLocation']['name']);
+    $stmt_doacao->bind_param("idss", $_SESSION['usuario_id'], $data['donationAmount'], $data['paymentMethod'], $data['selectedLocation']['name']);
     $stmt_doacao->execute();
 
     $id_nova_doacao = $connection->insert_id;
 
+    // MUDANÇA 1: A query agora insere um placeholder '?' no lugar de CURDATE()
     $sql_arvore = "INSERT INTO arvores_adotadas (doacao_iddoacao, doacao_idusuario, nome_arvore, especie, data_plantio, status) VALUES (?, ?, ?, ?, CURDATE(), 'a plantar')";
     $stmt_arvore = $connection->prepare($sql_arvore);
-    $data_plantio_nula = null;
     
-    //bind_param tem 4 parâmetros (i, i, s, s, ) e passa uma variável nula
+    //bind_param tem 4 parâmetros (i, i, s, s)
     $stmt_arvore->bind_param("iiss", $id_nova_doacao, $_SESSION['usuario_id'], $data['treeName'], $data['treeSpecies']);
     $stmt_arvore->execute();
 
