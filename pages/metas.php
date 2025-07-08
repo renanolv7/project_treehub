@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once __DIR__ . '/../config/urls.php';
     require_once __DIR__ . '/../services/services_metas.php';  
     $paginaAtual = basename($_SERVER['SCRIPT_NAME']);  
