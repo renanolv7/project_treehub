@@ -19,7 +19,6 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-
     <!-- Link CSS geral -->
     <link href="<?= CSS_URL ?>contato.css" rel="stylesheet">
 
@@ -34,8 +33,8 @@
 
             <section class="left-section hidden md:block relative w-1/2 h-full overflow-hidden">
 
-                <img class="absolute -top-56 left-10 h-4/5 object-contain rotate-180 opacity-30" src="<?= IMAGENS ?>folha_arvore.png" alt="" srcset="">
-                <img class="absolute -bottom-56 -left-10  object-contain rotate-90 opacity-25 w-[400px]" src="<?= IMAGENS ?>folha_arvore.png" alt="" srcset="">
+                <img class="absolute -top-56 left-10 h-4/5 object-contain rotate-180 opacity-40 slide-in-top" src="<?= IMAGENS ?>folha_arvore.png" alt="" srcset="">
+                <img class="absolute -bottom-56 -left-10  object-contain rotate-90 opacity-40 w-[400px] slide-in-left" src="<?= IMAGENS ?>folha_arvore.png" alt="" srcset="">
                 
             </section>
     
@@ -100,5 +99,8 @@
         </div>
     </main>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="../assets/js/GSAP/contato_folhas_animation.js"></script>
 
 </html>
