@@ -131,7 +131,7 @@
                     <div class="info-row py-4">
                         <div class="view-container display-view flex justify-between items-center">
                             <div>
-                                <p class="font-semibold text-gray-800">CPF</p>
+                                <p class="font-semibold text-gray-800">CPF/CNPJ</p>
                                 <p class="text-gray-600 data-text">************</p>
                             </div>
                             <button class="px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-400 bg-gray-100" disabled>Editar</button>
