@@ -32,6 +32,8 @@
             <div class="box w-[30rem] h-fit bg-[#fffefe] rounded-2xl m-5 p-8 shadow-xl">
 
                 <div class="header-box">
+                        <div id="login-error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                        </div>
                     <h1 class="underline-title text-2xl font-normal text-gray-950">Começar a usar</h1>
                     <p class="text-gray-600 mt-6">Seja bem-vindo, vamos acessar sua conta!</p>
                 </div>
@@ -66,6 +68,18 @@
             </div>
         </form>
     </main>
+    <!-- Modal login desativado -->
+      
+<div id="inactiveAccountModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm text-center">
+        <h3 class="text-lg font-bold text-gray-800">Conta Desativada</h3>
+        <p class="mt-2 text-gray-600">Você desativou sua conta. Aguarde 3 dias úteis ou entre em contato com a equipe da Tree Hub.</p>
+        <div class="mt-6">
+            <button id="closeInactiveModal" class="px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4719] transition-colors">Entendi</button>
+        </div>
+    </div>
+</div>    
 </body>
+    <script src="<?= JS_URL ?>login_handler.js" defer></script>
 
 </html>
