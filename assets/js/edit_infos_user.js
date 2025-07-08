@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const saveAction = async () => {
                 try {
-                    const response = await fetch('../../services/alterar_dados_service', {
+                    const response = await fetch('../../services/alterar_dados_service.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await response.json();
 
                     if (result.success) {
-                        
+
                         alert(result.message);
                         window.location.reload(); 
                     } else {
