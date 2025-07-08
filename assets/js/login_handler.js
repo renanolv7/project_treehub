@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Impede o envio padrão do formulário
+            e.preventDefault();
             errorContainer.classList.add('hidden');
 
             const formData = new FormData(loginForm);

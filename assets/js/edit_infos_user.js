@@ -111,12 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const result = await response.json();
 
                     if (result.success) {
-                        if (dataInput.type === 'password') {
-                            dataText.textContent = '************';
-                        } else {
-                            dataText.textContent = newValue;
-                        }
-                        alert(result.message); 
+                        
+                        alert(result.message);
+                        window.location.reload(); 
                     } else {
                         alert('Erro: ' + result.message);
                     }
