@@ -61,4 +61,5 @@ if (sha1($senha_atual) === $hash_sha1_db) {
 
 $connection->close();
 echo json_encode($response);
+
 ?>

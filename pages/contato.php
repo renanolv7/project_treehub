@@ -13,9 +13,6 @@
     <meta name="author" content="Tree Hub">
     <title>Tree Hub | Contato</title>
 
-    <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -66,6 +63,7 @@
                                        class="w-full px-3 py-2 border border-gray-300 rounded-md " 
                                        placeholder="Email"
                                        required>
+
                                 <input type="tel" 
                                        name="telefone" 
                                        class="w-full px-3 py-2 border border-gray-300 rounded-md " 
@@ -90,11 +88,8 @@
                                     type="submit">
                             Enviar mensagem
                         </button>
-        
                     </div>
-        
                 </form>
-
             </section>
         </div>
     </main>

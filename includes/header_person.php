@@ -39,7 +39,6 @@
                 <a href="<?= CONFIGURACOES ?>configuracoes.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Configurações</a>
                 <a href="<?= SERVICES ?>logout_service.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sair</a>
             </div>
-            
         </div>
     </div>
 </header>

@@ -17,9 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tree Hub">
     <title>Tree Hub | Dados</title>
-
-    <!-- Chart.js para o gráfico -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -27,11 +24,9 @@
     <link href="<?= CSS_URL ?>dashboard.css" rel="stylesheet">
 
     <style>
-        /* Adiciona uma transição suave para uma melhor experiência do usuário */
         .view-container, #confirmationModal {
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         }
-        /* Garante que o modal escondido não ocupe espaço nem receba eventos */
         .modal-hidden {
             opacity: 0;
             visibility: hidden;
@@ -159,7 +154,6 @@
         </div>
     </div>
 
-    <script src="../../assets/js/charts_person.js"></script>
     <script src="../../assets/js/dropdown.js"></script>
     <script src="../../assets/js/edit_infos_user.js"></script>
 

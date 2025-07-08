@@ -31,9 +31,7 @@ if (empty($campo) || !in_array($campo, ['nome', 'email', 'telefone', 'senha'])) 
     exit;
 }
 
-
 $sql = "UPDATE usuario SET {$campo} = ? WHERE idusuario = ?";
-
 
 $stmt = $connection->prepare($sql);
 $stmt->bind_param("si", $valor, $idusuario);

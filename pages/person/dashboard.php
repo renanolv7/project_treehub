@@ -7,14 +7,14 @@
         header("Location: ../pages/login.php");
         exit;
     }
-        if ($_SESSION['usuario_tipo'] !== 'pf') {
+
+    if ($_SESSION['usuario_tipo'] !== 'pf') {
         header("Location: " . DASHBOARD_ORG . "dashboard_org.php");
-            exit;
-        }
+        exit;
+    }
 
     require_once __DIR__ . '/../../services/services_dashboard.php';    
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">

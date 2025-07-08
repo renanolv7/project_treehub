@@ -20,7 +20,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="min-h-screen w-auto flex flex-col bg-gray-50">
@@ -29,12 +28,11 @@
     <main class="ml-3 mb-3 mr-3 bg-white flex-grow rounded-xl">
         <div class="container">
             <div class="flex h-full overflow-hidden">
-                
                 <div class=" lg:w-1/2 p-6 sm:p-8 md:p-12">
+
                     <h1 class="text-3xl font-bold text-gray-800 mb-8">Lista de árvores adotadas</h1>
 
                     <div class="space-y-4 max-h-[65vh] overflow-y-auto pr-4 custom-scrollbar">
-
                         <?php if (!empty($doacoes)): ?>
                             <?php foreach ($doacoes as $index => $doacao): ?>
                                 <a href="#" class="block">
@@ -59,20 +57,12 @@
                         
                     </div>
                 </div>
-                
             </div>
             
             <div class="absolute top-0 right-4 h-full w-1/2 pointer-events-none z-0 overflow-hidden lg:block">
-                <img 
-                    src="../../assets/images/arvore_lista_doacoes.png" 
-                    alt="Ilustração de uma árvore"
-                    class="tree-image absolute bottom-3 right-0 h-[80%] w-auto max-w-none opacity-50 grayscale-[20%] sm:w-50%"
-                    style="transform: translateX(35%);"
-                />
-                
+                <img src="../../assets/images/arvore_lista_doacoes.png" alt="Ilustração de uma árvore" class="tree-image absolute bottom-3 right-0 h-[80%] w-auto max-w-none opacity-50 grayscale-[20%] sm:w-50%" style="transform: translateX(35%);"/>
             </div>
         </div>
-    
     </main>
     
     <script src="../../assets/js/dropdown.js"></script>

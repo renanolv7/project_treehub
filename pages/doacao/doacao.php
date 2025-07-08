@@ -96,6 +96,7 @@
                     </div>
                 </div>
     
+                <!-- A lógica aqui é que ao ativar o "Toogle" altere entre as telas sem ir para outro arquivo -->
                 <div id="step-3" class="step">
                     <h1 class="text-3xl font-bold text-center text-gray-700 mb-4">PAGAMENTO</h1>
                     <p id="donation-summary-2" class="text-center text-gray-500 mb-4 text-lg"></p>
@@ -113,7 +114,7 @@
                         </div>
                     </div>
 
-                    <!-- Formulário de Cartão -->
+                    <!-- Formulário para pagamento no cartão -->
                     <div id="card-payment-form" class="max-w-md mx-auto">
                         <div class="space-y-4">
                             <input type="text" id="card-name" placeholder="Nome no cartão" class="w-full px-4 py-3 border border-gray-300 rounded-lg">
@@ -129,7 +130,7 @@
                         </div>
                     </div>
 
-                    <!-- Formulário de Pix -->
+                    <!-- Formulário para pagamtn no Pix -->
                     <div id="pix-payment-form" class="max-w-md mx-auto hidden">
                         <div class="text-center">
                             <div class="bg-white p-6 rounded-lg border-2 border-gray-300">

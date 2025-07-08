@@ -5,7 +5,6 @@ include('../config/database/conexao_banco.php');
 
 $connection = new mysqli($servername, $username, $password, $dbname);
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $connection->real_escape_string($_POST['name']);
     $email = $connection->real_escape_string($_POST['email']);

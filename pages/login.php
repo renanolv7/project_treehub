@@ -4,15 +4,11 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tree Hub">
     <title>Tree Hub | Login</title>
-
-    <!-- Transformar arquivos HTTP em HTTPS para navegadores mais rigorosos -->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,7 +47,6 @@
                     <div class="text-left mt-2">
                         <a href="#" class="text-sm hover:underline font-semibold">Esqueceu sua senha?</a>
                     </div>
-
                 </div>
                 
                 <button class="w-full bg-[#2f4f1c] text-white py-2 mt-5 rounded-md 
@@ -68,18 +63,20 @@
             </div>
         </form>
     </main>
+
     <!-- Modal login desativado -->
-      
-<div id="inactiveAccountModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 flex items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm text-center">
-        <h3 class="text-lg font-bold text-gray-800">Conta Desativada</h3>
-        <p class="mt-2 text-gray-600">Você desativou sua conta. Aguarde 3 dias úteis ou entre em contato com a equipe da Tree Hub.</p>
-        <div class="mt-6">
-            <button id="closeInactiveModal" class="px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4719] transition-colors">Entendi</button>
+    <div id="inactiveAccountModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 items-center justify-center z-50">
+        <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm text-center">
+            <h3 class="text-lg font-bold text-gray-800">Conta Desativada</h3>
+            <p class="mt-2 text-gray-600">Você desativou sua conta. Aguarde 3 dias úteis ou entre em contato com a equipe da Tree Hub.</p>
+            <div class="mt-6">
+                <button id="closeInactiveModal" class="px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4719] transition-colors">Entendi</button>
+            </div>
         </div>
-    </div>
-</div>    
+    </div>  
+      
 </body>
-    <script src="<?= JS_URL ?>login_handler.js" defer></script>
+
+<script src="<?= JS_URL ?>login_handler.js" defer></script>
 
 </html>

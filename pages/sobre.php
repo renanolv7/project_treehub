@@ -21,7 +21,6 @@
             overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
         }
     </style>
-
 </head>
 <body class="min-h-screen w-auto flex flex-col bg-gray-50">
     

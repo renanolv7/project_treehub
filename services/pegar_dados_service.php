@@ -28,5 +28,7 @@ if ($userData) {
 }
 
 $stmt->close();
+
 $connection->close();
+
 ?>

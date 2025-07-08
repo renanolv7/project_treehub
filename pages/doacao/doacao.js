@@ -284,6 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Falha na comunicação:', error);
             showAlert('Não foi possível conectar ao servidor. Verifique sua conexão.');
+
         } finally {
             // Reativa o botão e esconde o spinner
             pixConfirmButton.disabled = false;
@@ -300,6 +301,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loadState();
     updateStepUI();
     
-    // Inicializar método de pagamento padrão
     togglePaymentMethod(donationState.paymentMethod);
 });

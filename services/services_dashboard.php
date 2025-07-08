@@ -5,7 +5,6 @@ require_once __DIR__ . '/../config/database/conexao_banco.php';
 // conexao banco
 $connection = new mysqli($servername, $username, $password, $dbname);
 
-
 $idusuario = $_SESSION['usuario_id'];
 
 // Total de Árvores Doadas 
@@ -45,5 +44,6 @@ $stmt_arvores->close();
 $stmt_valor->close();
 $stmt_ranking->close();
 $stmt_outros_hoje->close();
+
 $connection->close();
 ?>

@@ -59,5 +59,6 @@ echo json_encode($response);
 if (isset($stmt_doacao)) $stmt_doacao->close();
 if (isset($stmt_arvore)) $stmt_arvore->close();
 if (isset($stmt_transacao)) $stmt_transacao->close();
+
 $connection->close();
 ?>

@@ -13,10 +13,8 @@
         header("Location: /project_treehub/pages/person/dashboard.php");
         exit;
     }
-
     require_once __DIR__ . '/../../services/services_dashboard.php';    
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -12,13 +12,8 @@
     <meta name="author" content="Tree Hub">
     <title>Tree Hub | Metas</title>
 
-    <!-- Transformar arquivos HTTP em HTTPS-->
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    
 
     <!-- Link CSS geral -->
     <link href="<?= CSS_URL ?>meta.css" rel="stylesheet">
@@ -34,7 +29,6 @@
 
             <!-- Seção das barras de progresso -->
             <section class="w-full lg:w-2/5 space-y-6 md:space-y-8 lg:space-y-10">
-                
                 <div class="space-y-3">
                     <h3 class="text-xl md:text-2xl font-light">ÁRVORES PLANTADAS</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
@@ -54,7 +48,6 @@
                 <div class="space-y-2">
                     <h3 class="text-xl md:text-2xl font-light">VALOR ARRECADADO</h3>
                     <div class="relative w-full h-12 md:h-14 lg:h-20 bg-[#acc0b0] rounded-2xl flex items-center shadow-xl">
-                        <!-- A mesma estrutura é aplicada aqui -->
                         <div id="progress-bar-valor"
                              class="absolute h-full bg-[#2f4f1c] rounded-l-2xl"
                              style="width: 0%;"

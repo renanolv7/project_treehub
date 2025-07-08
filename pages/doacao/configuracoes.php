@@ -92,9 +92,11 @@
 
     
 </body>
-    <script>
-        const loginUrl = '<?= LOGIN . "login.php" ?>';
-    </script>
+
+<script>
+    const loginUrl = '<?= LOGIN . "login.php" ?>';
+</script>
+
 <script src="../../assets/js/dropdown.js"></script>
 <script src="../../assets/js/edit_infos_user.js"></script>
 <script src="../../assets/js/desativa_conta.js"></script>
