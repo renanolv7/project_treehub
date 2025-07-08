@@ -66,7 +66,7 @@
 
     <!-- Modal login desativado -->
     <div id="inactiveAccountModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-60 items-center justify-center z-50">
-        <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-sm text-center">
+        <div class="bg-white p-6 rounded-lg shadow-xl w-full text-center">
             <h3 class="text-lg font-bold text-gray-800">Conta Desativada</h3>
             <p class="mt-2 text-gray-600">Você desativou sua conta. Aguarde 3 dias úteis ou entre em contato com a equipe da Tree Hub.</p>
             <div class="mt-6">
