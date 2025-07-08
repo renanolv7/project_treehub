@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const payButtonText = document.getElementById('pay-button-text');
     const paySpinner = document.getElementById('pay-spinner');
 
+    // Elementos para métodos de pagamento
+    const paymentCardBtn = document.getElementById('payment-card-btn');
+    const paymentPixBtn = document.getElementById('payment-pix-btn');
+    const cardPaymentForm = document.getElementById('card-payment-form');
+    const pixPaymentForm = document.getElementById('pix-payment-form');
+    const pixConfirmButton = document.getElementById('pix-confirm-button');
+    const pixButtonText = document.getElementById('pix-button-text');
+    const pixSpinner = document.getElementById('pix-spinner');
+
     const finalSummary = document.getElementById('final-summary');
     const resetButton = document.getElementById('reset-button');
     
@@ -26,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         treeName: '',
         treeSpecies: '',
         selectedLocation: null,
-        donationAmount: null
+        donationAmount: null,
+        paymentMethod: 'cartao' // Padrão é cartão
     };
 
     const saveState = () => {
@@ -77,9 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationName = donationState.selectedLocation ? donationState.selectedLocation.name : 'um local incrível';
         const donationAmount = donationState.donationAmount ? donationState.donationAmount.toFixed(2).replace('.', ',') : '0,00';
 
-        donationSummary1.textContent = `Você está nomeando a árvore "${treeName}" (${treeSpecies}) a ser plantada em ${locationName}.`;
+        donationSummary1.textContent = `Você está nomeando a árvore "${treeName}" (${treeSpecies}) que será plantada em ${locationName}.`;
         donationSummary2.textContent = `Você está doando R$ ${donationAmount} para plantar a "${treeName}".`;
-        finalSummary.textContent = `Sua doação de R$ ${donationAmount} foi confirmada! A árvore "${treeName}" será plantada em ${locationName}. Acompanhe seu email para mais novidades.`;
+        finalSummary.textContent = `Sua doação de R$ ${donationAmount} foi confirmada! A árvore "${treeName}" será plantada em ${locationName}.`;
+    };
+
+    const togglePaymentMethod = (method) => {
+        donationState.paymentMethod = method;
+        
+        paymentCardBtn.classList.toggle('selected', method === 'cartao');
+        paymentPixBtn.classList.toggle('selected', method === 'pix');
+        
+        cardPaymentForm.classList.toggle('hidden', method !== 'cartao');
+        pixPaymentForm.classList.toggle('hidden', method !== 'pix');
+        
+        saveState();
     };
 
 
@@ -152,12 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (donationState.currentStep === 1) {
             if (!treeNameInput.value.trim() || !treeSpeciesSelect.value || !donationState.selectedLocation) {
-                showAlert('Por favor, preencha todos os campos e selecione um local.');
+                showAlert('Por favor, preencha todos os campos e selecione um local');
                 return;
             }
         } else if (donationState.currentStep === 2) {
              if (!donationState.donationAmount || donationState.donationAmount <= 0) {
-                showAlert('Por favor, escolha um valor de doação válido.');
+                showAlert('Por favor, escolha um valor de doação válido');
                 return;
             }
         }
@@ -188,12 +210,18 @@ document.addEventListener('DOMContentLoaded', () => {
         saveState();
     });
 
-    payButton.addEventListener('click', async () => { // Adicionamos 'async' para usar 'await'
-        const cardFields = ['card-name', 'card-number', 'card-expiry', 'card-cvc'];
-        const isInvalid = cardFields.some(id => !document.getElementById(id).value.trim());
-        if (isInvalid) {
-            showAlert('Por favor, preencha todos os dados do pagamento.');
-            return;
+    paymentCardBtn.addEventListener('click', () => togglePaymentMethod('cartao'));
+    paymentPixBtn.addEventListener('click', () => togglePaymentMethod('pix'));
+
+    payButton.addEventListener('click', async () => {
+        // Validação específica para cartão
+        if (donationState.paymentMethod === 'cartao') {
+            const cardFields = ['card-name', 'card-number', 'card-expiry', 'card-cvc'];
+            const isInvalid = cardFields.some(id => !document.getElementById(id).value.trim());
+            if (isInvalid) {
+                showAlert('Por favor, preencha todos os dados do cartão.');
+                return;
+            }
         }
 
         // Desativa o botão e mostra o spinner
@@ -208,11 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(donationState) // Envia o objeto 'donationState' 
+                body: JSON.stringify(donationState)
             });
 
             const result = await response.json();
-            // verificacao se houve erro    
             if (result.success) {
                 goToNextStep();
             } else {
@@ -223,10 +250,45 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Falha na comunicação:', error);
             showAlert('Não foi possível conectar ao servidor. Verifique sua conexão.');
         } finally {
-            // Reativa o botão e esconde o spinner, independentemente do resultado
+            // Reativa o botão e esconde o spinner
             payButton.disabled = false;
             paySpinner.classList.add('hidden');
             payButtonText.innerHTML = '<i class="fas fa-lock"></i> Doar Agora';
+        }
+    });
+
+    // Event listener para pagamento via Pix
+    pixConfirmButton.addEventListener('click', async () => {
+        // Desativa o botão e mostra o spinner
+        pixConfirmButton.disabled = true;
+        pixSpinner.classList.remove('hidden');
+        pixButtonText.textContent = 'Processando...';
+
+        try {
+            // Envia os dados do estado da doação
+            const response = await fetch('../../services/doacao_service.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(donationState)
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                goToNextStep();
+            } else {
+                showAlert(result.message || 'Ocorreu um erro ao processar sua doação.');
+            }
+
+        } catch (error) {
+            console.error('Falha na comunicação:', error);
+            showAlert('Não foi possível conectar ao servidor. Verifique sua conexão.');
+        } finally {
+            // Reativa o botão e esconde o spinner
+            pixConfirmButton.disabled = false;
+            pixSpinner.classList.add('hidden');
+            pixButtonText.innerHTML = '<i class="fas fa-check"></i> Confirmar Pagamento Pix';
         }
     });
 
@@ -237,4 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadState();
     updateStepUI();
+    
+    // Inicializar método de pagamento padrão
+    togglePaymentMethod(donationState.paymentMethod);
 });
