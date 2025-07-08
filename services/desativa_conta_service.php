@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 // Resposta padrão
 $response = ['success' => false, 'message' => 'Não foi possível desativar a conta.'];
 
-// Verifica se o usuário está logado
+// Verificacao se usuario esta logado
 if (!isset($_SESSION['usuario_id'])) {
     $response['message'] = 'Usuário não autenticado.';
     echo json_encode($response);
@@ -17,13 +17,13 @@ $connection = new mysqli($servername, $username, $password, $dbname);
 
 $idusuario = $_SESSION['usuario_id'];
 
-// Prepara a query para setar o usuário como inativo (ativo = 0)
+// query para setar o usuário como inativo
 $sql = "UPDATE usuario SET ativo = 0 WHERE idusuario = ?";
 $stmt = $connection->prepare($sql);
 $stmt->bind_param("i", $idusuario);
 
 if ($stmt->execute()) {
-    // Se a conta foi desativada, destrói a sessão (faz o logout)
+    // Se a conta foi desativada, destrói a sessão
     $_SESSION = array();
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();

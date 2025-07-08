@@ -32,7 +32,6 @@ try {
 
     $id_nova_doacao = $connection->insert_id;
 
-    // MUDANÇA 1: A query agora insere um placeholder '?' no lugar de CURDATE()
     $sql_arvore = "INSERT INTO arvores_adotadas (doacao_iddoacao, doacao_idusuario, nome_arvore, especie, data_plantio, status) VALUES (?, ?, ?, ?, CURDATE(), 'a plantar')";
     $stmt_arvore = $connection->prepare($sql_arvore);
     
