@@ -25,11 +25,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (modalConfirmBtn) {
-        modalConfirmBtn.addEventListener('click', () => {
+        modalConfirmBtn.addEventListener('click', async () => {
             if (!modalConfirmBtn.disabled) {
-                console.log('Account deactivation confirmed.');
-                confirmationModal.classList.add('modal-hidden');
-                // Aqui viria a lógica de backend para desativar a conta
+                try {
+                    const response = await fetch('../../services/desativa_conta_service.php', {
+                        method: 'POST'
+                    });
+                    const result = await response.json();
+
+                    if (result.success) {
+                        alert(result.message); // Exibe mensagem de sucesso
+                        // Redireciona para a página de login após o logout
+                        window.location.href = loginUrl; 
+                    } else {
+                        alert('Erro: ' + result.message);
+                    }
+                } catch (error) {
+                    alert('Falha na comunicação com o servidor.');
+                }
             }
         });
     }
