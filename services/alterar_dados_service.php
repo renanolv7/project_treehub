@@ -31,13 +31,9 @@ if (empty($campo) || !in_array($campo, ['nome', 'email', 'telefone', 'senha'])) 
     exit;
 }
 
-// query de UPDATE padrão
+
 $sql = "UPDATE usuario SET {$campo} = ? WHERE idusuario = ?";
 
-// Se o campo for a senha
-if ($campo === 'senha') {
-    $sql = "UPDATE usuario SET senha = SHA(?) WHERE idusuario = ?";
-}
 
 $stmt = $connection->prepare($sql);
 $stmt->bind_param("si", $valor, $idusuario);

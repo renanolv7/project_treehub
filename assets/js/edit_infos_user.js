@@ -90,36 +90,34 @@ document.addEventListener('DOMContentLoaded', () => {
         editBtn.addEventListener('click', switchToEditMode);
         cancelBtn.addEventListener('click', switchToDisplayMode);
 
-        // Modificado: Botão Salvar agora abre o modal
 
         saveBtn.addEventListener('click', () => {
             
-            // Identifica se estamos editando a senha ou outro campo
+            // identicacao se esta alterando senha ou outro campo 
             const isPasswordRow = row.id === 'senha-row';
 
             const saveAction = async () => {
                 let serviceUrl;
                 let payload;
 
-                // SE FOR A LINHA DA SENHA, usa a lógica segura e o serviço dedicado
+                // se for senha
                 if (isPasswordRow) {
                     const currentPassword = row.querySelector('#senha_atual').value;
                     const newPassword = row.querySelector('#senha_nova').value;
                     const confirmPassword = row.querySelector('#confirma_senha').value;
 
-                    // Validação no frontend antes de enviar
                     if (newPassword !== confirmPassword) {
                         alert('A nova senha e a confirmação não correspondem.');
                         return; 
                     }
 
-                    serviceUrl = '../../services/alterar_senha_service.php'; // Usa o serviço dedicado
+                    serviceUrl = '../../services/alterar_senha_service.php'; 
                     payload = { currentPassword, newPassword, confirmPassword };
                 
-                // SE FOR QUALQUER OUTRO CAMPO, usa a lógica simples
+                // se for qualquer campo
                 } else {
                     const dataInput = row.querySelector('.data-input');
-                    serviceUrl = '../../services/alterar_dados_service.php'; // Usa o serviço geral
+                    serviceUrl = '../../services/alterar_dados_service.php'; 
                     payload = {
                         field: dataInput.id,
                         value: dataInput.value

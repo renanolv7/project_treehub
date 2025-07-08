@@ -55,7 +55,7 @@ if (sha1($senha_atual) === $hash_sha1_db) {
     }
     $stmt_update->close();
 } else {
-    // Se a senha atual estiver incorreta
+    // Se senha incorreta
     $response['message'] = 'A senha atual está incorreta.';
 }
 
