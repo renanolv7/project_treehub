@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Impede o envio padrão do formulário
+            e.preventDefault();
             errorContainer.classList.add('hidden');
 
             const formData = new FormData(loginForm);
@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.status === 'success') {
-                    // Redireciona para o dashboard correto
+                    // Redireciona para dashboard
                     window.location.href = result.redirect;
                 } else if (result.status === 'inactive') {
                     // Mostra o modal de conta inativa
                     inactiveModal.classList.remove('hidden');
                 } else {
-                    // Mostra a mensagem de erro
+                    // Mostra mensagem de erro
                     errorContainer.textContent = result.message;
                     errorContainer.classList.remove('hidden');
                 }

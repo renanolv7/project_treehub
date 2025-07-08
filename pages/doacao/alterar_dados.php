@@ -94,7 +94,7 @@
                         </div>
                         <div class="view-container edit-view hidden">
                             <label for="celular" class="font-semibold text-gray-800">Número de celular principal</label>
-                            <input type="tel" id="celular" class="data-input mt-2 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#2f4f1c] focus:border-[#2f4f1c]" value="+55912345678">
+                            <input type="tel" id="telefone" class="data-input mt-2 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#2f4f1c] focus:border-[#2f4f1c]" value="+55912345678">
                             <div class="flex justify-end space-x-3 mt-4">
                                 <button class="cancel-btn px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors">Cancelar</button>
                                 <button class="save-btn px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2f4f1c] transition-colors">Salvar</button>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
     
-                    <div class="info-row py-4 border-b border-gray-200">
+                    <div id="senha-row" class="info-row py-4 border-b border-gray-200">
                         <div class="view-container display-view flex justify-between items-center">
                             <div>
                                 <p class="font-semibold text-gray-800">Senha</p>
@@ -112,11 +112,23 @@
                         </div>
 
                         <div class="view-container edit-view hidden">
-                            <label for="senha" class="font-semibold text-gray-800">Nova Senha</label>
-                            <input type="password" id="senha" class="data-input mt-2 w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-[#2f4f1c] focus:border-[#2f4f1c]" placeholder="Digite a nova senha">
+                            <div class="space-y-4">
+                                <div>
+                                    <label for="senha_atual" class="font-semibold text-gray-800">Senha Atual</label>
+                                    <input type="password" id="senha_atual" class="data-input-current mt-2 w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Digite sua senha atual">
+                                </div>
+                                <div>
+                                    <label for="senha_nova" class="font-semibold text-gray-800">Nova Senha</label>
+                                    <input type="password" id="senha_nova" class="data-input-new mt-2 w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Digite a nova senha">
+                                </div>
+                                <div>
+                                    <label for="confirma_senha" class="font-semibold text-gray-800">Confirmar Nova Senha</label>
+                                    <input type="password" id="confirma_senha" class="data-input-confirm mt-2 w-full border border-gray-300 rounded-lg px-3 py-2" placeholder="Confirme a nova senha">
+                                </div>
+                            </div>
                             <div class="flex justify-end space-x-3 mt-4">
                                 <button class="cancel-btn px-6 py-2 border border-gray-300 rounded-lg text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors">Cancelar</button>
-                                <button class="save-btn px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2f4f1c] transition-colors">Salvar</button>
+                                <button class="save-btn px-6 py-2 bg-[#2f4f1c] text-white rounded-lg text-sm font-semibold hover:bg-[#2a4719] transition-colors">Salvar Alterações</button>
                             </div>
                         </div>
                     </div>
