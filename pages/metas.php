@@ -17,6 +17,8 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    
+
     <!-- Link CSS geral -->
     <link href="<?= CSS_URL ?>meta.css" rel="stylesheet">
 
@@ -64,10 +66,8 @@
                 </div>
             </section>
     
-            <!-- Seção dos boxes de estatísticas -->
             <section class="flex flex-col sm:flex-row sm:gap-6 md:gap-6 w-full lg:h-auto lg:w-auto xl:ml-10 sm:h-44">
                 
-                <!-- Organizações -->
                 <div class="flex flex-col items-center ">
                     <h3 class="text-xl md:text-2xl font-light mb-2 md:mb-3">ORGANIZAÇÕES</h3>
                     <div class="relative w-full sm:w-48 md:w-48 lg:w-64 xl:w-64 h-32 md:h-40 lg:h-64 xl:h-64 shadow-xl">
@@ -80,7 +80,6 @@
                     </div>
                 </div>
                 
-                <!-- Pessoas Físicas -->
                 <div class="flex flex-col items-center">
                     <h3 class="text-xl md:text-2xl font-light mb-2 md:mb-3">PESSOAS FÍSICAS</h3>
                     <div class="flex justify-center items-center w-full sm:w-full sm:h-full md:w-48 lg:w-64 xl:w-64 h-32 md:h-40 lg:h-64 xl:h-64 bg-slate-500 rounded-2xl text-white shadow-xl">
@@ -92,6 +91,6 @@
     </main>
 
 </body>
-<script src="<?= ANIMATION_PROGRESS ?>animation_progress.js"></script>
+<!-- <script src="<?= ANIMATION_PROGRESS ?>animation_progress.js"></script> -->
 
 </html> 
