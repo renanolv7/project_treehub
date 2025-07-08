@@ -32,14 +32,12 @@ try {
 
     $id_nova_doacao = $connection->insert_id;
 
-    // --- INÍCIO DA MODIFICAÇÃO ---
-    // MUDANÇA 1: A query agora insere um placeholder '?' no lugar de CURDATE()
-    $sql_arvore = "INSERT INTO arvores_adotadas (doacao_iddoacao, doacao_idusuario, nome_arvore, especie, data_plantio, status) VALUES (?, ?, ?, ?, ?, 'a plantar')";
+    $sql_arvore = "INSERT INTO arvores_adotadas (doacao_iddoacao, doacao_idusuario, nome_arvore, especie, data_plantio, status) VALUES (?, ?, ?, ?, CURDATE(), 'a plantar')";
     $stmt_arvore = $connection->prepare($sql_arvore);
     $data_plantio_nula = null;
     
-    //bind_param tem 5 parâmetros (i, i, s, s, s) e passa a variável nula
-    $stmt_arvore->bind_param("iisss", $id_nova_doacao, $_SESSION['usuario_id'], $data['treeName'], $data['treeSpecies'], $data_plantio_nula);
+    //bind_param tem 4 parâmetros (i, i, s, s, ) e passa uma variável nula
+    $stmt_arvore->bind_param("iiss", $id_nova_doacao, $_SESSION['usuario_id'], $data['treeName'], $data['treeSpecies']);
     $stmt_arvore->execute();
 
     // Inserção na tabela 'transacao_financeira'
