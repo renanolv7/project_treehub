@@ -73,11 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let originalValue = dataText.textContent;
 
         const switchToEditMode = () => {
-            originalValue = dataInput.type === 'password' ? '' : dataText.textContent;
-            dataInput.value = originalValue;
+            if (dataInput) { 
+                originalValue = dataText.textContent;
+                dataInput.value = originalValue;
+                dataInput.focus();
+            }
             displayView.classList.add('hidden');
             editView.classList.remove('hidden');
-            dataInput.focus();
         };
 
         const switchToDisplayMode = () => {
@@ -92,41 +94,60 @@ document.addEventListener('DOMContentLoaded', () => {
 
         saveBtn.addEventListener('click', () => {
             
-            const fieldName = dataInput.id; // 'id' do input
-            const newValue = dataInput.value;
+            // Identifica se estamos editando a senha ou outro campo
+            const isPasswordRow = row.id === 'senha-row';
 
             const saveAction = async () => {
-                try {
-                    const response = await fetch('../../services/alterar_dados_service.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            field: fieldName,
-                            value: newValue
-                        })
-                    });
+                let serviceUrl;
+                let payload;
 
-                    const result = await response.json();
+                // SE FOR A LINHA DA SENHA, usa a lógica segura e o serviço dedicado
+                if (isPasswordRow) {
+                    const currentPassword = row.querySelector('#senha_atual').value;
+                    const newPassword = row.querySelector('#senha_nova').value;
+                    const confirmPassword = row.querySelector('#confirma_senha').value;
 
-                    if (result.success) {
-
-                        alert(result.message);
-                        window.location.reload(); 
-                    } else {
-                        alert('Erro: ' + result.message);
+                    // Validação no frontend antes de enviar
+                    if (newPassword !== confirmPassword) {
+                        alert('A nova senha e a confirmação não correspondem.');
+                        return; 
                     }
 
+                    serviceUrl = '../../services/alterar_senha_service.php'; // Usa o serviço dedicado
+                    payload = { currentPassword, newPassword, confirmPassword };
+                
+                // SE FOR QUALQUER OUTRO CAMPO, usa a lógica simples
+                } else {
+                    const dataInput = row.querySelector('.data-input');
+                    serviceUrl = '../../services/alterar_dados_service.php'; // Usa o serviço geral
+                    payload = {
+                        field: dataInput.id,
+                        value: dataInput.value
+                    };
+                }
+
+                // A lógica de fetch agora funciona para ambos os casos
+                try {
+                    const response = await fetch(serviceUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    alert(result.message);
+
+                    if (result.success) {
+                        window.location.reload();
+                    }
                 } catch (error) {
-                    console.error('Falha na comunicação com o servidor:', error);
-                    alert('Não foi possível salvar os dados. Tente novamente.');
-                } finally {
-                    switchToDisplayMode();
+                    console.error('Falha na comunicação:', error);
+                    alert('Não foi possível salvar os dados.');
                 }
             };
 
-            openModal(saveAction); // Abre o modal de confirmação com a nova ação de salvar
+            openModal(saveAction);
+
         });
     });
 });
