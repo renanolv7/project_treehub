@@ -1,0 +1,32 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+  - script: |
+      curl -sS https://getcomposer.org/installer | php
+      php composer.phar install --no-dev --optimize-autoloader
+    displayName: 'Instalar dependências'
+
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+      includeRootFolder: false
+      archiveFile: '$(Build.ArtifactStagingDirectory)/app.zip'
+    displayName: 'Empacotar aplicação'
+
+  - publish: $(Build.ArtifactStagingDirectory)/app.zip
+    artifact: drop
+    displayName: 'Publicar artifact'
+
+  - task: AzureWebApp@1
+    inputs:
+      azureSubscription: 'tree-hub-app-f6fqhah3hvhrgsa0.chilecentral-01.azurewebsites.net'
+      appName: 'tree-hub-app'
+      appType: 'webAppLinux'
+      runtimeStack: 'PHP|8.2'
+      package: '$(Build.ArtifactStagingDirectory)/app.zip'
+    displayName: 'Deploy no App Service'
